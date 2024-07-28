@@ -17,4 +17,3 @@ class RecipeProvider extends ChangeNotifier
   }
 
 }
-

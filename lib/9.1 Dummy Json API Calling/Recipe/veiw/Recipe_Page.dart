@@ -10,41 +10,105 @@ class RecipePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     RecipeProvider recipeProvider = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: const Icon(
-          Icons.account_circle_outlined,
-          size: 30,
+        leading: Icon(
+          Icons.menu,
+          color: Colors.white,
         ),
-        scrolledUnderElevation: 0.1,
+        title: Text(
+          'Recipe ',
+          style: TextStyle(color: Colors.white, fontSize: 30),
+        ),
+        actions: [
+          Icon(
+            Icons.search,
+            color: Colors.white,
+            size: 25,
+          ),
+          SizedBox(
+            width: 20,
+          )
+        ],
+        backgroundColor: Colors.black,
       ),
       body: FutureBuilder(
-        future: Provider.of<RecipeProvider>(context, listen: false)
-            .fromJson(),
+        future: Provider.of<RecipeProvider>(context, listen: false).fromJson(),
         builder: (context, snapshot) {
           RecipeModal? apiModal = snapshot.data;
           if (snapshot.hasData) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                itemCount: recipeProvider.recipeModal!.recipes.length,
-                itemBuilder: (context, index) => Container(
-                  height: 300,
-                  width: double.infinity,
-                  margin: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(apiModal!.recipes[index].image),
+            return ListView.builder(
+              itemCount: recipeProvider.recipeModal!.recipes.length,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        selectINdex = index;
+                        Navigator.of(context).pushNamed('/detail');
+                      },
+                      child: Container(
+                        height: height * 0.2,
+                        width: width * 0.45,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            image: NetworkImage(apiModal!.recipes[index].image),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                  child: Text('${apiModal.recipes[index].rating}'),
+                    SizedBox(
+                      width: width * 0.05,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: width * 0.4,
+                          child: Text(
+                            // textAlign: TextAlign.center,
+                            apiModal!.recipes[index].name,
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.reviews),
+                            Text(
+                              '${apiModal.recipes[index].reviewCount}',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          // crossAxisAlignment: CrossAxisAlignment.,
+                          children: [
+                            Text(
+                              apiModal.recipes[index].difficulty,
+                              style: TextStyle(fontSize: 16),
+                            ),
+
+                            SizedBox(
+                              width: width * 0.1,
+                            ),
+                            Text(
+                              // textAlign: TextAlign.center,
+                              apiModal.recipes[index].cuisine,
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ),
             );
@@ -58,3 +122,32 @@ class RecipePage extends StatelessWidget {
     );
   }
 }
+
+int selectINdex = 0;
+// height: 200,
+//                     width: double.infinity,
+//                     margin: const EdgeInsets.all(10),
+//                     decoration: BoxDecoration(
+//                         borderRadius: BorderRadius.circular(20),
+//                         image: DecorationImage(
+//                           fit: BoxFit.cover,
+//                           image: NetworkImage(apiModal!.recipes[index].image),
+//                         ),
+//                         boxShadow: [BoxShadow(color: Colors.black26)]),
+//                     child: Center(
+//                       child: Container(
+//                         height: 200,//                         decoration: BoxDecoration(
+//                           color: Colors.black26,apiModal.recipes[index].name
+//                           borderRadius: BorderRadius.circular(20),
+//                         ),
+//                         child: Center(
+//                           child: Text(
+//                             '${apiModal.recipes[index].name}',
+//                             style: TextStyle(
+//                               fontSize: 30,
+//                               color: Colors.white,
+//                             ),
+//                           ),
+//                         ),
+//                       ),
+//                     ),

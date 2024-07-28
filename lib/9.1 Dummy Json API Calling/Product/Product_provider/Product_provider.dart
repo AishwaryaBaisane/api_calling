@@ -10,13 +10,29 @@ class ProductProvider extends ChangeNotifier
   ProductApiHelper apiHelper = ProductApiHelper();
   ProductModal? productModal;
 
-  Future<ProductModal?> fromMap()
+  Future<ProductModal?> fromJson()
   async {
     final data = await apiHelper.Product_Api_Calling();
-    productModal = ProductModal.fromJson2(data);
+    productModal = ProductModal.fromJson(data);
     notifyListeners();
     return productModal;
 
   }
 
 }
+
+//class RecipeProvider extends ChangeNotifier
+// {
+//   RecipeApiHelper apiHelper = RecipeApiHelper();
+//   RecipeModal? recipeModal;
+//
+//   Future<RecipeModal?> fromJson()
+//   async {
+//     final data = await apiHelper.Recipe_Api_Calling();
+//     recipeModal = RecipeModal.fromJson(data);
+//     notifyListeners();
+//     return recipeModal;
+//
+//   }
+//
+// }

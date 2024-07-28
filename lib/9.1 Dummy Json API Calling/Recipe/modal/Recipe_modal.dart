@@ -5,48 +5,59 @@ class RecipeModal {
 
   RecipeModal({required this.recipes});
 
-  factory RecipeModal.fromJson(Map m1)
-  {
-    return RecipeModal(recipes: m1['recipes']);
-
+  factory RecipeModal.fromJson(Map m1) {
+    return RecipeModal(
+      recipes: (m1['recipes'] as List).map((e) => Recipes.fromJson(e)).toList(),
+    );
   }
-
 }
 
 class Recipes {
-  late int id, prepTimeMinutes, cookTimeMinutes, servings, rating;
+  late int id,
+      prepTimeMinutes,
+      cookTimeMinutes,
+      servings,
+      caloriesPerServing,
+      userId,
+      reviewCount;
   late String name, difficulty, cuisine, image;
   late List ingredients, instructions, tags, mealType;
 
-  Recipes({required this.id,
-    required this.name,
+  Recipes({
+    required this.id,
+    required this.prepTimeMinutes,
     required this.cookTimeMinutes,
-    required this.cuisine,
+    required this.servings,
+    required this.caloriesPerServing,
+    required this.userId,
+    required this.reviewCount,
+    required this.name,
     required this.difficulty,
+    required this.cuisine,
     required this.image,
     required this.ingredients,
     required this.instructions,
+    required this.tags,
     required this.mealType,
-    required this.prepTimeMinutes,
-    required this.rating,
-    required this.servings,
-    required this.tags});
+  });
 
   factory Recipes.fromJson(Map m1) {
     return Recipes(
       id: m1['id'],
-      name: m1['name'],
+      prepTimeMinutes: m1['prepTimeMinutes'],
       cookTimeMinutes: m1['cookTimeMinutes'],
-      cuisine: m1['cuisine'],
+      servings: m1['servings'],
+      caloriesPerServing: m1['caloriesPerServing'],
+      userId: m1['userId'],
+      reviewCount: m1['reviewCount'],
+      name: m1['name'],
       difficulty: m1['difficulty'],
+      cuisine: m1['cuisine'],
       image: m1['image'],
       ingredients: m1['ingredients'],
       instructions: m1['instructions'],
-      mealType: m1['mealType'],
-      prepTimeMinutes: m1['prepTimeMinutes'],
-      rating: m1['rating'],
-      servings: m1['servings'],
       tags: m1['tags'],
+      mealType: m1['mealType'],
     );
   }
 }
