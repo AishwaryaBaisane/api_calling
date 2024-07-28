@@ -5,7 +5,7 @@ import 'package:http/http.dart';
 
 class ProductApiHelper
 {
-  String api = 'https://pixabay.com/api/?key=45140193-022d8adb1e5eee0ac2ab1bcac&q=products&image_type=photo&pretty=true';
+  String api = 'https://dummyjson.com/products';
 
   Future<Map> Product_Api_Calling()
   async {

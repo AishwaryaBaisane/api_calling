@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../../9.2 Call Pixabay API/modal/api_modal.dart';
 import '../Provider/Recipe_provider.dart';
+import '../modal/Recipe_modal.dart';
 
 class RecipePage extends StatelessWidget {
   const RecipePage({super.key});
@@ -21,9 +22,9 @@ class RecipePage extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: Provider.of<RecipeProvider>(context, listen: false)
-            .fromMap(),
+            .fromJson(),
         builder: (context, snapshot) {
-          PixabayModal? apiModal = snapshot.data;
+          RecipeModal? apiModal = snapshot.data;
           if (snapshot.hasData) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -31,7 +32,7 @@ class RecipePage extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                 ),
-                itemCount: recipeProvider.recipeModal!.hits.length,
+                itemCount: recipeProvider.recipeModal!.recipes.length,
                 itemBuilder: (context, index) => Container(
                   height: 300,
                   width: double.infinity,
@@ -40,10 +41,10 @@ class RecipePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(apiModal!.hits[index].webformatURL),
+                      image: NetworkImage(apiModal!.recipes[index].image),
                     ),
                   ),
-                  child: Text('${apiModal.hits[index].likes}'),
+                  child: Text('${apiModal.recipes[index].rating}'),
                 ),
               ),
             );
