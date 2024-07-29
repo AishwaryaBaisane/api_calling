@@ -2,6 +2,29 @@
 
 ## 9.1 Dummy Json API Calling:-
 
+### 🛒 Flutter Product App
+
+#### Description:
+
+- The Flutter Product App is a versatile application designed to showcase and manage products efficiently. 
+- It offers a seamless experience across Android and iOS platforms, making it easy for users to browse, search, and purchase products with a smooth and intuitive interface.
+
+#### Features:
+
+- Product Listing: View a comprehensive list of products with detailed information, including descriptions, prices, and images.
+
+- Product Details: Access detailed information about each product, including specifications, reviews, and related items.
+- Shopping Cart: Add products to the shopping cart for a streamlined checkout experience.
+
+- Wishlist: Save favorite products to your wishlist for future reference.
+
+#### Technologies Used:
+
+- Flutter: For building a high-performance, cross-platform UI.
+- Dart: The programming language used with Flutter for app development.
+
+- Provider: For state management to efficiently handle data and UI updates.
+
 <p>
   <img src = "https://github.com/user-attachments/assets/76b47842-2d0c-48d9-acd8-12a7d94fc4da" height = 25% width = 25% >
   <img src = "https://github.com/user-attachments/assets/00bf953e-1ff6-41d8-9edd-6f0b63cea0fc" height = 25% width = 25% >
@@ -10,6 +33,29 @@
 
 
 https://github.com/user-attachments/assets/2da4d4aa-e166-4080-b189-7364418ba3fb
+
+
+ ### 🍲 Flutter Recipes App 🍽️
+
+####  Description:
+
+- The Flutter Recipes App is a beautifully designed application that helps users discover, organize, and create recipes with ease.
+ - Built using Flutter, this app offers a seamless experience across both Android and iOS platforms, making cooking and meal planning a delightful experience.
+
+#### Features:
+
+- Recipe Discovery: Explore a wide range of recipes with detailed instructions, ingredients, and nutritional information.
+
+- Custom Recipe Creation: Create and edit your own recipes, complete with photos and personalized notes.
+
+- Responsive UI: Enjoy a fluid and intuitive user interface that adapts to any screen size.
+
+#### Technologies Used:
+
+- Flutter: Utilized for developing a high-performance, cross-platform UI.
+- Dart: The primary programming language for Flutter development.
+cloud storage, and real-time database (optional).
+- Provider: State management solution for efficient data handling and UI updates.
 
 
 <p>
