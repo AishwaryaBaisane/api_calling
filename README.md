@@ -8,10 +8,27 @@
   <img src = "https://github.com/user-attachments/assets/2989a4cb-3c57-4dfa-bbb8-4b84e8221fe5" height = 25% width = 25% >
 </p>
 
+
+https://github.com/user-attachments/assets/2da4d4aa-e166-4080-b189-7364418ba3fb
+
+
 <p>
   <img src = "https://github.com/user-attachments/assets/62317dd1-87db-4f11-9dcb-4ba09ae61751" height = 25% width = 25% >
   <img src = "https://github.com/user-attachments/assets/c9e34a2b-6316-42f4-be21-3e50376556b0" height = 25% width = 25% >
   <img src = "https://github.com/user-attachments/assets/ba068993-5afb-4168-95cd-58a7318d446e" height = 25% width = 25% >
 </p>
 
+https://github.com/user-attachments/assets/a5e0cbff-fabb-430b-b625-11bead923e31
+
+
+
 ## 9.2 Call Pixabay API & Represent in UI.:-
+
+<p>
+  <img src = "https://github.com/user-attachments/assets/f7de51f1-a9f8-4d95-ab2a-59fd55869e89" height = 25% width = 25% >
+ 
+</p>
+
+
+https://github.com/user-attachments/assets/0fb14e9f-6e7f-4b95-af84-be3a84574883
+
