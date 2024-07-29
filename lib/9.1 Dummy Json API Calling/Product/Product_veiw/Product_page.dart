@@ -59,7 +59,7 @@ class ProductPage extends StatelessWidget {
                   Expanded(
                     child: ListView.builder(
                       itemCount: apiModal!.products.length,
-                      itemBuilder: (context, index) => Card(
+                      itemBuilder: (context, index) => Container(
                         child: Row(
                           children: [
                             GestureDetector(onTap: () {
