@@ -2,6 +2,7 @@ import 'package:api_calling/9.1%20Dummy%20Json%20API%20Calling/Product/Product_v
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../Utils/Global_data.dart';
 import '../Product_provider/Cart_Provider.dart';
 import '../Product_provider/Product_provider.dart';
 import 'Product_page.dart';
@@ -213,7 +214,3 @@ class ProductDatailPage extends StatelessWidget {
   }
 }
 
-
-int NewSelectIndex =0;
-
-List<int> qty = [];

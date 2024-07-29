@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../Utils/Global_data.dart';
 import '../Product_provider/Cart_Provider.dart';
 import '../Product_provider/Product_provider.dart';
 import 'Product_datail_page.dart';
@@ -73,6 +74,7 @@ class ECommerceCartScreen extends StatelessWidget {
           height: height * 0.08,
           width: double.infinity,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: const EdgeInsets.all(18.0),
@@ -80,7 +82,7 @@ class ECommerceCartScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Total Amount:- ${ecommerceCartProviderTrue.price}',
+                      'Total Amount:- ${ecommerceCartProviderTrue.price }',
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -104,8 +106,9 @@ class ECommerceCartScreen extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 20,
                   ),
-                )),
-              )
+                ),),
+              ),
+              SizedBox(width: width * 0.03,),
             ],
           ),
         ),

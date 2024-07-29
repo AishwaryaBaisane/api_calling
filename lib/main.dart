@@ -34,7 +34,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/':(context)=> PixabayApi(),
+        '/pixa':(context)=> PixabayApi(),
+        '/re':(context)=> RecipePage(),
+        '/Rdetail':(context)=> Detail_Page(),
+        '/':(context)=> ProductPage(),
         '/detail': (context) => ProductDatailPage(),
         '/cart': (context) => ECommerceCartScreen(),
       },

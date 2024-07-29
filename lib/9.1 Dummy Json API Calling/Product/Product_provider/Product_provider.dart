@@ -20,19 +20,3 @@ class ProductProvider extends ChangeNotifier
   }
 
 }
-
-//class RecipeProvider extends ChangeNotifier
-// {
-//   RecipeApiHelper apiHelper = RecipeApiHelper();
-//   RecipeModal? recipeModal;
-//
-//   Future<RecipeModal?> fromJson()
-//   async {
-//     final data = await apiHelper.Recipe_Api_Calling();
-//     recipeModal = RecipeModal.fromJson(data);
-//     notifyListeners();
-//     return recipeModal;
-//
-//   }
-//
-// }
