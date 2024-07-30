@@ -32,7 +32,10 @@
 </p>
 
 
-https://github.com/user-attachments/assets/2da4d4aa-e166-4080-b189-7364418ba3fb
+
+<div align="center">
+<video height="550" src="https://github.com/user-attachments/assets/2da4d4aa-e166-4080-b189-7364418ba3fb"/>
+</div>
 
 
  ### 🍲 Flutter Recipes App 🍽️
@@ -64,7 +67,10 @@ cloud storage, and real-time database (optional).
   <img src = "https://github.com/user-attachments/assets/ba068993-5afb-4168-95cd-58a7318d446e" height = 25% width = 25% >
 </p>
 
-https://github.com/user-attachments/assets/a5e0cbff-fabb-430b-b625-11bead923e31
+
+<div align="center">
+<video height="550" src="https://github.com/user-attachments/assets/a5e0cbff-fabb-430b-b625-11bead923e31"/>
+</div>
 
 
 
@@ -81,6 +87,7 @@ https://github.com/user-attachments/assets/0fb14e9f-6e7f-4b95-af84-be3a84574883
 ```dart
 dependencies:
   async_wallpaper: ^2.0.0
+  flutter_cache_manager: ^3.3.3
 
   pub get
 
@@ -115,10 +122,11 @@ try {
 </p>
 
 
+<div align="center">
+<video height="550" src="https://github.com/user-attachments/assets/a2f94761-c4bc-4b83-8e6c-7a0bac7bf80a"/>
+</div>
 
 
-
-https://github.com/user-attachments/assets/a2f94761-c4bc-4b83-8e6c-7a0bac7bf80a
 
 
 
