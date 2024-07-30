@@ -75,6 +75,57 @@ https://github.com/user-attachments/assets/a5e0cbff-fabb-430b-b625-11bead923e31
  
 </p>
 
-
 https://github.com/user-attachments/assets/0fb14e9f-6e7f-4b95-af84-be3a84574883
+
+## Async wallpaper  :-
+```dart
+dependencies:
+  async_wallpaper: ^2.0.0
+
+  pub get
+
+  import 'package:async_wallpaper/async_wallpaper.dart';
+
+  
+```
+
+```dart
+String result;
+var file = await DefaultCacheManager().getSingleFile(url);
+// Platform messages may fail, so we use a try/catch PlatformException.
+try {
+    result = await AsyncWallpaper.setWallpaperFromFile(
+    filePath: file.path,
+    wallpaperLocation: AsyncWallpaper.HOME_SCREEN,
+    goToHome: goToHome,
+    toastDetails: ToastDetails.success(),
+    errorToastDetails: ToastDetails.error(),
+    )
+        ? 'Wallpaper set'
+        : 'Failed to get wallpaper.';
+} on PlatformException {
+    result = 'Failed to get wallpaper.';
+}
+
+```
+<p>
+  <img src = "https://github.com/user-attachments/assets/fd270040-6be1-490f-8248-2d3b297c40d1" height = 25% width = 25% >
+  <img src = "https://github.com/user-attachments/assets/3cd7a6aa-2ff2-4065-9a8b-564afc77cdf6" height = 25% width = 25% >
+  <img src = "https://github.com/user-attachments/assets/da472894-0bcd-4094-8878-190f97c595c6" height = 25% width = 25% >
+</p>
+
+
+
+
+
+https://github.com/user-attachments/assets/a2f94761-c4bc-4b83-8e6c-7a0bac7bf80a
+
+
+
+
+
+
+
+
+
 
