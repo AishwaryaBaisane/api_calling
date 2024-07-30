@@ -81,7 +81,10 @@ cloud storage, and real-time database (optional).
  
 </p>
 
-https://github.com/user-attachments/assets/0fb14e9f-6e7f-4b95-af84-be3a84574883
+
+<div align="center">
+<video height="550" src="https://github.com/user-attachments/assets/0fb14e9f-6e7f-4b95-af84-be3a84574883"/>
+</div>
 
 ## Async wallpaper  :-
 ```dart
