@@ -9,6 +9,8 @@ class PixabayProvider extends ChangeNotifier
   ApiHelper apiHelper = ApiHelper();
   PixabayModal? pixabayModal;
   String search = 'car';
+  bool goToHome = false;
+
 
   void findImg(String img){
     search = img;
@@ -20,8 +22,14 @@ class PixabayProvider extends ChangeNotifier
   async {
     final data = await apiHelper.apiCalling(img);
     pixabayModal = PixabayModal.fromMap(data);
-    notifyListeners();
     return pixabayModal;
+  }
+
+  bool wallpaper()
+  {
+    goToHome != goToHome;
+    return goToHome;
+
   }
 
 }

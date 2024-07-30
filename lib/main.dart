@@ -9,6 +9,7 @@ import '9.1 Dummy Json API Calling/Recipe/Provider/Recipe_provider.dart';
 import '9.1 Dummy Json API Calling/Recipe/veiw/Deatail_page.dart';
 import '9.1 Dummy Json API Calling/Recipe/veiw/Recipe_Page.dart';
 import '9.2 Call Pixabay API/Provider/provider.dart';
+import '9.2 Call Pixabay API/view/api_Detail.dart';
 import '9.2 Call Pixabay API/view/api_screen.dart';
 
 void main() {
@@ -34,10 +35,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/pixa':(context)=> PixabayApi(),
+        '/':(context)=> PixabayApi(),
+        '/apiDetail':(context)=> ApiDetail(),
         '/re':(context)=> RecipePage(),
         '/Rdetail':(context)=> Detail_Page(),
-        '/':(context)=> ProductPage(),
+        '/product':(context)=> ProductPage(),
         '/detail': (context) => ProductDatailPage(),
         '/cart': (context) => ECommerceCartScreen(),
       },

@@ -13,7 +13,6 @@ class RecipeProvider extends ChangeNotifier
     recipeModal = RecipeModal.fromJson(data);
     notifyListeners();
     return recipeModal;
-
   }
 
 }

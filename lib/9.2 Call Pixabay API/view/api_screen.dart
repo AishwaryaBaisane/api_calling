@@ -14,66 +14,71 @@ class PixabayApi extends StatelessWidget {
 
     PixabayProvider pixabayProvider = Provider.of(context);
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          leading: Icon(
-            Icons.menu,
-            color: Colors.white,
-            size: 30,
-          ),
-          title: Text(
-            'PixaBay Data',
-            style: TextStyle(color: Colors.white, fontSize: 30),
-          ),
-          backgroundColor: Colors.black,
+      appBar: AppBar(
+        centerTitle: true,
+        leading: Icon(
+          Icons.menu,
+          color: Colors.white,
+          size: 30,
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                onChanged: (value) {
-                  pixabayProvider.findImg(value);
-                },
-                controller: txtSearch,
-                cursorColor: Colors.black,
-                decoration: InputDecoration(
-                  suffixIcon: GestureDetector(
-                    onTap: () {},
-                    child: const Icon(Icons.close),
+        title: Text(
+          'PixaBay Data',
+          style: TextStyle(color: Colors.white, fontSize: 30),
+        ),
+        backgroundColor: Colors.black,
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              onSubmitted: (value) {
+                pixabayProvider.findImg(value);
+              },
+              controller: txtSearch,
+              cursorColor: Colors.black,
+              decoration: InputDecoration(
+                suffixIcon: GestureDetector(
+                  onTap: () {},
+                  child: const Icon(Icons.close),
+                ),
+                prefixIcon: const Icon(Icons.search),
+                hintText: 'Search Images',
+                hintStyle: const TextStyle(color: Colors.grey),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: const BorderSide(
+                    color: Colors.black,
+                    width: 1,
                   ),
-                  prefixIcon: const Icon(Icons.search),
-                  hintText: 'Search Images',
-                  hintStyle: const TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: const BorderSide(
-                      color: Colors.black,
-                      width: 1,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
-                      color: Colors.black,
-                      width: 1,
-                    ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Colors.black,
+                    width: 1,
                   ),
                 ),
               ),
             ),
-            Expanded(
-              child: FutureBuilder(
-                future: Provider.of<PixabayProvider>(context, listen: false)
-                    .fromMap(pixabayProvider.search),
-                builder: (context, snapshot) {
-                  PixabayModal? apiModal = snapshot.data;
-                  if (snapshot.hasData) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListView.builder(
-                        itemCount: pixabayProvider.pixabayModal!.hits.length,
-                        itemBuilder: (context, index) => Container(
+          ),
+          Expanded(
+            child: FutureBuilder(
+              future: Provider.of<PixabayProvider>(context, listen: false)
+                  .fromMap(pixabayProvider.search),
+              builder: (context, snapshot) {
+                PixabayModal? apiModal = snapshot.data;
+                if (snapshot.hasData) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListView.builder(
+                      itemCount: pixabayProvider.pixabayModal!.hits.length,
+                      itemBuilder: (context, index) => InkWell(
+                        onTap: () {
+                          selectImg = index;
+                          Navigator.of(context).pushNamed('/apiDetail');
+                        },
+                        child: Container(
                           height: 250,
                           width: double.infinity,
                           margin: const EdgeInsets.all(10),
@@ -157,16 +162,22 @@ class PixabayApi extends StatelessWidget {
                               )),
                         ),
                       ),
-                    );
-                  } else {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                },
-              ),
+                    ),
+                  );
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }
+
+var selectImg = 0;
+
+
